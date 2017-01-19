@@ -42,68 +42,163 @@ session_start();
 <body>
 
    
+		<div id="wrapper">
+			<!-- Sidebar -->
+			<div id="sidebar-wrapper">
+				<ul class="sidebar-nav">
+					<li>
+						<a href="#">Kontakte</a>
+						<ul class="Kontakte-nav">
+							<li>
+								<a href="Suchfenster.php" id="Suchfenster_li">Suchen</a>
+							</li>
+							<li>
+								<a href="#" id="Adresslisten_li">Adresslisten</a>
+							</li>
+							<li>
+								<a href="Kontakt_neu.php" id="Kontakt_neu_li">Neuer Kontakt</a>
+							</li>
+							<li>
+								<a href="#" id="Kontakt_bearbeiten_li">Kontake bearbeiten</a>
+							</li>
+							<li>
+								<a href="#" id="Admin_li">Admin</a>
+							</li>
+							</ul>	
+					</li>
+					<li>
+						<a href="#" id="Star_li">Studentische Arbeiten</a>
+					</li>
+					<li>
+						<a href="#" id="Bibliothek_li">Bibliothek</a>
+					</li>
+					<li>
+						<a href="#" id="Einstellungen_li">Einstellungen</a>
+					</li>
+					<li>
+						<a href="logout.php" id="Logout_li">Logout</a>
+					</li>
+					
+					<li>
+							<a href="#" id="menu-toggle">Toggle</a>
+					</li>
+				  
+				</ul>
+			</div>
+		</div>
+			
+			<!--Hilfe-->
+			<div id='Hilfe' align='right'>
+				Hilfe...
+			</div>
+	 
+			
+			<div id="Kontakt_neu_hilfe" align="center" class="Hilfe" style="visibility: hidden;">
+				In diesem Menüpunkt lässt sich ein neuer Kontakt zur Datenbank hinzufügen
+			</div>
 
-        <!-- Sidebar -->
-        <div id="sidebar-wrapper">
-            <ul class="sidebar-nav">
-                <li>
-                    <a href="#">Kontakte</a>
-					<ul class="Kontakte-nav">
-						<li>
-							<a href="Suchfenster.php">Suchen</a>
-						</li>
-						<li>
-							<a href="#">Adresslisten</a>
-						</li>
-						<li>
-							<a href="Kontakt_neu.php" id="Kontakt_neu_li">Neuer Kontakt</a>
-						</li>
-						<li>
-							<a href="#">Kontake bearbeiten</a>
-						</li>
-						<li>
-							<a href="#">Admin</a>
-						</li>
-						</ul>	
-                </li>
-                <li>
-                    <a href="#">Studentische Arbeiten</a>
-                </li>
-                <li>
-                    <a href="#">Bibliothek</a>
-                </li>
-                <li>
-                    <a href="#">Einstellungen</a>
-                </li>
-                <li>
-                    <a href="logout.php">Logout</a>
-                </li>
-              
-            </ul>
-        </div>
+			<div id="Suchfenster_hilfe" align="center" class="Hilfe" style="visibility: hidden;">
+				In diesem Menüpunkt lassen sich Kontakte suchen
+			</div>
 
-        
-        <!--Hilfe-->
-        <div id='Hilfe' align='right'>
-       		Hilfe...
-        </div>
- 
-        
-     <div id="Kontakt_neu_hilfe" align="center" style="visibility: hidden;">
-        In diesem Menüpunkt lässt sich ein neuer Kontakt zur Datenbank hinzufügen
-        </div>
+			<div id="Adresslisten_hilfe" align="center" class="Hilfe" style="visibility: hidden;">
+				In diesem Menüpunkt lassen sich die Adresslisten anzeigen
+			</div>
+
+			<div id="Kontakt_bearbeiten_hilfe" align="center" class="Hilfe" style="visibility: hidden;">
+				In diesem Menüpunkt lässt sich ein ausgewählter Kontakt bearbeiten
+			</div>
+
+			<div id="Admin_hilfe" align="center" class="Hilfe" style="visibility: hidden;">
+				In diesem Menüpunkt können die Benutzerrechte vergeben werden
+			</div>
+
+			<div id="Star_hilfe" align="center" class="Hilfe" style="visibility: hidden;">
+				Zu Studentischen Arbeiten
+			</div>
+
+			<div id="Bibliothek_hilfe" align="center" class="Hilfe" style="visibility: hidden;">
+				Zur Bibliothek
+			</div>
+
+			<div id="Einstellungen_hilfe" align="center" class="Hilfe" style="visibility: hidden;">
+				Zu persönlichen Einstellungen
+			</div>
+
+			<div id="Logout_hilfe" align="center" class="Hilfe" style="visibility: hidden;">
+				Von aktueller Sitzung abmelden
+			</div>
 
 
 
-    <script>
-    $(document).ready(function(){
-        $("#Kontakt_neu_li").mouseout(function(){
-            $("#Kontakt_neu_hilfe").css("visibility","hidden");});
-        $("#Kontakt_neu_li").mouseover(function(){
-            $("#Kontakt_neu_hilfe").css("visibility","visible");
-         });
-    }); 
-    </script>
+
+		    <script>
+		    $(document).ready(function(){
+		        $("#Kontakt_neu_li").mouseover(function(){
+					$("#Hilfe").hide();
+		            $("#Kontakt_neu_hilfe").css("visibility","visible");  });
+				$("#Kontakt_neu_li").mouseout(function(){
+					$("#Kontakt_neu_hilfe").css("visibility","hidden");
+					$("#Hilfe").show();  });
+
+				$("#Suchfenster_li").mouseover(function(){
+					$("#Hilfe").hide();
+		            $("#Suchfenster_hilfe").css("visibility","visible");  });
+				$("#Suchfenster_li").mouseout(function(){
+					$("#Suchfenster_hilfe").css("visibility","hidden");
+					$("#Hilfe").show();  });
+
+				$("#Adresslisten_li").mouseover(function(){
+					$("#Hilfe").hide();
+		            $("#Adresslisten_hilfe").css("visibility","visible");  });
+				$("#Adresslisten_li").mouseout(function(){
+					$("#Adresslisten_hilfe").css("visibility","hidden");
+					$("#Hilfe").show();  });
+
+				$("#Kontakt_bearbeiten_li").mouseover(function(){
+					$("#Hilfe").hide();
+		            $("#Kontakt_bearbeiten_hilfe").css("visibility","visible");  });
+				$("#Kontakt_bearbeiten_li").mouseout(function(){
+					$("#Kontakt_bearbeiten_hilfe").css("visibility","hidden");
+					$("#Hilfe").show();  });
+
+				$("#Admin_li").mouseover(function(){
+					$("#Hilfe").hide();
+		            $("#Admin_hilfe").css("visibility","visible");  });
+				$("#Admin_li").mouseout(function(){
+					$("#Admin_hilfe").css("visibility","hidden");
+					$("#Hilfe").show();  });
+
+				$("#Star_li").mouseover(function(){
+					$("#Hilfe").hide();
+		            $("#Star_hilfe").css("visibility","visible");  });
+				$("#Star_li").mouseout(function(){
+					$("#Star_hilfe").css("visibility","hidden");
+					$("#Hilfe").show();  });
+
+				$("#Bibliothek_li").mouseover(function(){
+					$("#Hilfe").hide();
+		            $("#Bibliothek_hilfe").css("visibility","visible");  });
+				$("#Bibliothek_li").mouseout(function(){
+					$("#Bibliothek_hilfe").css("visibility","hidden");
+					$("#Hilfe").show();  });
+
+				$("#Einstellungen_li").mouseover(function(){
+					$("#Hilfe").hide();
+		            $("#Einstellungen_hilfe").css("visibility","visible");  });
+				$("#Einstellungen_li").mouseout(function(){
+					$("#Einstellungen_hilfe").css("visibility","hidden");
+					$("#Hilfe").show();  });
+
+				$("#Logout_li").mouseover(function(){
+					$("#Hilfe").hide();
+		            $("#Logout_hilfe").css("visibility","visible");  });
+				$("#Logout_li").mouseout(function(){
+					$("#Logout_hilfe").css("visibility","hidden");
+					$("#Hilfe").show();  });
+		         
+		    }); 
+		    </script>
 
 
   
