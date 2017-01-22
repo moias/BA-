@@ -74,7 +74,7 @@
 
 		</form><br><br>
 		<p style="position:relative; right:15px;">
-		<?php echo $error ?>
+		<?php echo $error; ?>
 		</p>
 	</div>
 

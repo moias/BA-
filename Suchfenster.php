@@ -1,5 +1,6 @@
 <?php
 include("navleiste.php");
+include("kontakt_suche_control.php");
 ?>
 <html>
 <head>
@@ -8,13 +9,25 @@ include("navleiste.php");
 </head>
 <body>
 
-	<div id="Suche_Wrapper" align="center">
+<div id="suche_wrapper" align="center">
 	<form action='' method='post'>
-		<input id='Suche' name='Sucheingabe' class='suche' placeholder='Suche...' type='text'>
-	</form>
+		<input id='suche' name='sucheingabe' class='suchfeld' placeholder='Suche...' type='text'>
+		<input id='submit' name='submit' type='submit' value='Suchen'>
+	</form><br><br>
+
+
+	<div id="suche_ergebnisse">
+		<ul>
+		<?php
+		if ($ergebnis!==''){
+			for($i=0; $i<=count($ergebnis)-1; $i++) {
+				echo '<li>'.$ergebnis[$i]['name'].',&nbsp'.$ergebnis[$i]['givenName'].'</li><br>';
+			}
+		}
+
+		?>
+		</ul>
 	</div>
-
-
-
+</div>
 </body>
 </html>

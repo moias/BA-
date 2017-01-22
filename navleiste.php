@@ -64,7 +64,7 @@ session_start();
 							<li>
 								<a href="#" id="Admin_li">Admin</a>
 							</li>
-							</ul>	
+						</ul>	
 					</li>
 					<li>
 						<a href="#" id="Star_li">Studentische Arbeiten</a>
